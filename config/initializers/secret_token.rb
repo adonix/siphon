@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Siphon::Application.config.secret_key_base = 'f05e3b609a13b013a9fca929ecec41c063865aa5ae3126acbd686acfc7db4babafe0cdda0d82b13d0e259ceded743f84b5169aba4fd49f857bc3a78f66646798'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Siphon::Application.config.secret_key_base = secure_token
