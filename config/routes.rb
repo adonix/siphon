@@ -1,8 +1,10 @@
 Siphon::Application.routes.draw do
+  get "users/new"
   root to: 'site_index#home'
 
   match "/upload",  to: 'site_index#upload',  via: 'get'
   match "/login",   to: 'site_index#login',   via: 'get'
+  match "/join",    to: 'users#new',          via: 'get'
 
   get "site_index/search"
   # The priority is based upon order of creation: first created -> highest priority.
