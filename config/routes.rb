@@ -1,4 +1,10 @@
 Siphon::Application.routes.draw do
+  root to: 'site_index#home'
+
+  #get "site_index/home"
+  get "site_index/login"
+  get "site_index/upload"
+  get "site_index/search"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

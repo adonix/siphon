@@ -1,0 +1,9 @@
+%h1 Siphon
+%div.center.hero-unit
+  %p Watch your videos here.
+  = video_tag('/videos/juneau.mp4', size: "600x355", controls: true)
+%div
+  %ul.thumbnails
+    %li.span4
+      %a{:href => '#', :class => 'thumbnail'}
+        =image_tag('mqdefault.jpg', alt: "Video thumbnail")

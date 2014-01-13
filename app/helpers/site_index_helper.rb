@@ -1,0 +1,2 @@
+module SiteIndexHelper
+end
