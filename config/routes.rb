@@ -1,9 +1,11 @@
 Siphon::Application.routes.draw do
+  resources :users
   root to: 'site_index#home'
 
-  #get "site_index/home"
-  get "site_index/login"
-  get "site_index/upload"
+  match "/upload",  to: 'site_index#upload',  via: 'get'
+  match "/login",   to: 'site_index#login',   via: 'get'
+  match "/join",    to: 'users#new',          via: 'get'
+
   get "site_index/search"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

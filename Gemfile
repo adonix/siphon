@@ -5,6 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'haml-rails'
+gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record
@@ -19,6 +20,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 
@@ -42,6 +44,12 @@ gem 'turbolinks', '1.1.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+# Imagemagick
+gem 'rmagick', '2.13.2'
+gem 'paperclip', '3.5.2'
+gem 'paperclip-ffmpeg', '1.0.1'
+gem 'remotipart', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
