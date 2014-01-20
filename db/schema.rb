@@ -11,20 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114010209) do
+ActiveRecord::Schema.define(version: 20140117211919) do
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "password_digest"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "videos", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name_file_name"
+    t.string   "name_content_type"
+    t.integer  "name_file_size"
+    t.datetime "name_updated_at"
+  end
+
+  add_index "videos", ["user_id", "created_at"], name: "index_videos_on_user_id_and_created_at"
 
 end

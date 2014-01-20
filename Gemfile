@@ -20,6 +20,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 
@@ -48,6 +49,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'rmagick', '2.13.2'
 gem 'paperclip', '3.5.2'
 gem 'paperclip-ffmpeg', '1.0.1'
+gem 'remotipart', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
