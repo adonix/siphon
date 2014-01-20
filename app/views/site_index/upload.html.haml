@@ -2,4 +2,10 @@
 %h1 Upload Your Video
 %p Rules for uploading
 %p.btn.btn-primary &uarr; Upload your video
+= form_for @video, :html => { :multipart => true }, :remote => true do |f|
+ .field
+  = f.label :name
+  = f.file_field :name_file_name
+ .actions
+  = f.submit
 
