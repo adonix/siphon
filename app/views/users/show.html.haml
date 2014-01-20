@@ -1,0 +1,13 @@
+-provide(:title, @user.name)
+.row
+  %aside.span4
+    %section
+      %h1
+        = @user.name
+    %section
+      %h1
+        = gravatar_for @user, size: 150
+  .span8
+    %h3 Videos
+    %ol
+      /= image_tag @user.videos.name.url(:medium)

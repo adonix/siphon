@@ -1,0 +1,14 @@
+-provide(:title, 'Join')
+%h1 Sign up
+
+.row
+  .span6.offset3
+    = form_for(@user) do |f|
+      = render 'shared/error_messages'
+
+      = f.text_field :name, placeholder: "First and Last Name", autofocus: true
+      = f.email_field :email, placeholder: "Email Address"
+      = f.password_field :password, placeholder: "Password"
+      = f.password_field :password_confirmation, placeholder: "Password Confirmation"
+
+      = f.submit "Join", class: "btn btn-large btn-primary"
