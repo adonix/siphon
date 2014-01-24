@@ -54,6 +54,7 @@ describe "User Pages" do
         before { click_button submit }
         let(:user) { User.find_by(email: "jdoe@somecompany.com") }
 
+        it { should have_link('Log Out')}
         it { should have_title(user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
