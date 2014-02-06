@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@videos = @user.videos
+    @videos = @user.videos
   end
 
   private

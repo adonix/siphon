@@ -1,0 +1,12 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+jQuery ($) ->
+    $('.btn-primary').click (e) ->
+        ext_allowed = ['mp4', 'mov', 'm4a']
+        file_ext = $('#video_name').val().split('.').pop().toLowerCase()
+        if($.inArray(file_ext, ext_allowed) != -1)
+            $('#rules_explanation').hide()
+            $('.progress.progress-striped.active').show()
+            $(this).addClass('disabled') #disable button

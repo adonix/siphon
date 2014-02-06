@@ -1,0 +1,17 @@
+-provide(:title, 'Upload')
+%h1 Upload Your Video
+.progress.progress-striped.active{ style: 'display: none' }
+  .bar{ style: 'width: 20%' }
+.alert.alert-info.span4#rules_explanation
+  %p Follow these rules for uploading your video:
+  %ol
+    %li No copyrighted material allowed
+    %li Upload videos you've created yourself
+
+.clearfix
+= form_for @video, :html => { :multipart => true }, :remote => true do |f|
+  .field
+    /= f.label :name, "Upload your video"
+    = f.file_field :name
+  .actions
+    = f.submit "Upload Video", class: "btn btn-big btn-primary"

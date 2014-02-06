@@ -1,9 +1,10 @@
 Siphon::Application.routes.draw do
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions,  only: [:new, :create, :destroy]
+  resources :videos,    only: [:new, :create, :show, :destroy]
   root to: 'site_index#home'
 
-  match "/upload",  to: 'site_index#upload',  via: 'get'
+  match "/upload",  to: 'videos#new',         via: 'get'
   match "/login",   to: 'sessions#new',       via: 'get'
   match "/logout",  to: 'sessions#destroy',   via: 'delete'
   match "/join",    to: 'users#new',          via: 'get'

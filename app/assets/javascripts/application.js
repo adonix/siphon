@@ -16,3 +16,9 @@
 //= require jquery.remotipart
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  setTimeout(function(){
+      $('.alert-success').remove();
+  }, 5000);
+});

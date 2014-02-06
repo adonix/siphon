@@ -26,4 +26,7 @@ Siphon::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # FFMPEG must be installed locally and Paperclip must access to it.
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

@@ -1,0 +1,10 @@
+.container.center
+  %video{ controls: true }
+    %source{ src: @video.name.url(:mp4medium), type: "video/mp4" }
+    %source{ src: @video.name.url(:oggmedium), type: "video/webm" }
+    %source{ src: @video.name.url(:flvmedium), type: "video/flv" }
+  - if current_user?(@video.user)
+    %p= link_to "delete", @video, method: :delete, data: { confirm: "Are you sure you want to delete this video?" }, title: 'Delete this video'
+
+%h1 Videos
+

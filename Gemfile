@@ -50,7 +50,7 @@ gem 'jbuilder', '~> 1.2'
 # Imagemagick
 gem 'rmagick', '2.13.2'
 gem 'paperclip', '3.5.2'
-gem 'paperclip-ffmpeg', '1.0.1'
+gem 'paperclip-ffmpeg', '~>1.0.1'
 gem 'remotipart', '~> 1.2'
 
 group :doc do

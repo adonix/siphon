@@ -1,13 +1,18 @@
 -provide(:title, @user.name)
 .row
-  %aside.span4
+  %aside.span3
     %section
       %h1
         = @user.name
     %section
       %h1
         = gravatar_for @user, size: 150
-  .span8
-    %h3 Videos
-    %ol
-      /= image_tag @user.videos.name.url(:medium)
+  .span9
+    %h3 #{pluralize(@user.videos.count, 'Video')}
+    %ul.thumbnails
+      - if @user.videos.any?
+        - @user.videos.each do |video|
+          %li.span3
+            %a{ href: path_to_video("#{video.id}"), class: 'thumbnail' }
+              = image_tag video.name.url(:thumb), size: '300x170', alt: ''
+              /= video_tag([video.name.url(:mp4medium), video.name.url(:oggmedium)], controls: true)
